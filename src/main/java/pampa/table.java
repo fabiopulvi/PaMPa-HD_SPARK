@@ -15,17 +15,17 @@ import static java.lang.Boolean.TRUE;
 
 
 public class table implements Serializable {
-    private static ArrayList<row> rows = new ArrayList<row>();
-    private static ArrayList<Integer> projection = new ArrayList<Integer>();
-    private static int deleted = 0;
-    private static int max=0;
-    private static int min=1;
+    private ArrayList<row> rows = new ArrayList<row>();
+    private  ArrayList<Integer> projection = new ArrayList<Integer>();
+    private int deleted = 0;
+    private  int max=0;
+    private  int min=1;
 
     public table () {};
 
     public table (int projection_first_step, ArrayList<row> rows) {
         //this.projection.clear();
-        this.projection.clear();
+        //this.projection.clear();
         this.projection.add(projection_first_step);
         //for (int r: this.projection) System.out.println("added:"+ r);
         this.rows=rows;
@@ -33,9 +33,9 @@ public class table implements Serializable {
         this.deleted=0;
     }
 
-    public table (ArrayList<Integer> projection_, ArrayList<row> rows) {
+    public table (ArrayList<Integer> projection, ArrayList<row> rows) {
         //this.projection.clear();
-        this.projection.clear();
+        //this.projection.clear();
         this.projection.addAll(projection);
         //for (int r: this.projection) System.out.println("added:"+ r);
         this.rows=rows;
@@ -44,22 +44,22 @@ public class table implements Serializable {
     }
 
 
-    public static ArrayList<row> getRows () {
+    public   ArrayList<row> getRows () {
         return rows;
     }
-    public static ArrayList<Integer> getProjection () {
-        return projection;
+    public  ArrayList<Integer> getProjection () {
+        return this.projection;
     }
 
-    public static int getDeleted () {
+    public  int getDeleted () {
         return deleted;
     }
 
-    public static int getMax () {
+    public  int getMax () {
         return max;
     }
 
-    public static boolean isEmpty() {
+    public  boolean isEmpty() {
         for (row r: rows) {
             if (r.getTid().size()>0)
                 return FALSE;}
